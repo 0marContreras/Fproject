@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhp50j1m8xt3c"]
+
+[ext_resource type="PackedScene" uid="uid://qoary7jgeo6e" path="res://palyer.tscn" id="1_ccr8o"]
+[ext_resource type="PackedScene" uid="uid://kj6xuoxgxoei" path="res://objects/Pointer/pointer.tscn" id="2_rxjae"]
+
+[node name="Main" type="Node"]
+
+[node name="palyer" parent="." instance=ExtResource("1_ccr8o")]
+position = Vector2(250, 160)
+
+[node name="circle" parent="palyer" instance=ExtResource("2_rxjae")]
