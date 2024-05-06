@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://64uagirsl67w"]
+
+[ext_resource type="Texture2D" uid="uid://dqsp65qhck0o0" path="res://objects/items/bounceBall/bounceBall.png" id="1_jcylt"]
+[ext_resource type="Script" path="res://objects/items/bounceBall/bounceBall.gd" id="1_udi0j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xjc4t"]
+radius = 38.833
+
+[node name="bounceBall" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_udi0j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_jcylt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xjc4t")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

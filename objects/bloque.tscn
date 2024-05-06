@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://clqu4f8bm235w"]
+
+[ext_resource type="Texture2D" uid="uid://bd5f26csk3j1u" path="res://sprites/bloque.png" id="1_lsnse"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l08y0"]
+size = Vector2(200, 201)
+
+[node name="bloque" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lsnse")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l08y0")
+
+[node name="Area2D" type="Area2D" parent="." groups=["deathWall"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_l08y0")

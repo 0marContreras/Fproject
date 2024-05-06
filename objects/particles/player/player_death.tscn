@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmt0uhtwey8q2"]
+
+[sub_resource type="Curve" id="Curve_myl7i"]
+_data = [Vector2(0.0114943, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_jcylv"]
+curve = SubResource("Curve_myl7i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dhe1a"]
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 70.71
+initial_velocity_max = 70.71
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 10.0
+scale_max = 30.0
+scale_curve = SubResource("CurveTexture_jcylv")
+
+[node name="player_death" type="GPUParticles2D"]
+scale = Vector2(3, 3)
+emitting = false
+amount = 17
+process_material = SubResource("ParticleProcessMaterial_dhe1a")
+one_shot = true
+speed_scale = 2.94
+explosiveness = 1.0
+fixed_fps = 60

@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://kj6xuoxgxoei"]
+[gd_scene load_steps=6 format=3 uid="uid://kj6xuoxgxoei"]
 
 [ext_resource type="Texture2D" uid="uid://bkj4jva6j5s4b" path="res://sprites/circle.png" id="1_jn6wi"]
 [ext_resource type="Script" path="res://objects/Pointer/circle.gd" id="1_ngnue"]
 [ext_resource type="Script" path="res://objects/Pointer/pointer.gd" id="2_d8sfp"]
 [ext_resource type="Texture2D" uid="uid://cjxl7d00blvbd" path="res://sprites/Pointer.png" id="2_sxnk8"]
 
-[node name="circle" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_uhflu"]
+radius = 175.61
+
+[node name="circle" type="Area2D"]
 scale = Vector2(0.41, 0.41)
 script = ExtResource("1_ngnue")
 
@@ -13,10 +16,12 @@ script = ExtResource("1_ngnue")
 texture = ExtResource("1_jn6wi")
 
 [node name="pointer" type="Node2D" parent="."]
-position = Vector2(0, 251.225)
 scale = Vector2(1.48, 1.48)
 script = ExtResource("2_d8sfp")
 
 [node name="Sprite2D" type="Sprite2D" parent="pointer"]
 scale = Vector2(0.41, 0.41)
 texture = ExtResource("2_sxnk8")
+
+[node name="collition" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uhflu")
