@@ -250,3 +250,6 @@ z_index = -4
 position = Vector2(991.5, 533.25)
 scale = Vector2(1.98229, 1.61519)
 texture = ExtResource("4_x3liw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(958, 540)
